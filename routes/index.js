@@ -6,7 +6,6 @@ var fs = require('fs');
 var router = express.Router();
 
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
   var options = {
     uri: 'https://www.bing.com/images/search?q=curry&FORM=HDRSC2',
     headers: {
@@ -27,6 +26,8 @@ router.get('/', function(req, res, next) {
         });
         console.log(imgs.length);
         console.log(imgs);
+
+        res.render('index', { img: imgs });
       });
 });
 

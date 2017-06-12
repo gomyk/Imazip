@@ -3,3 +3,10 @@ extends layout
 block content
   h1= title
   p Welcome to #{title}
+  
+  input#url(type='text', name='url', value='Search')
+  button#search 검색
+  -for(var prop in img)
+      tr
+        th(scope='row')
+        img(src='#{img[prop]}')
