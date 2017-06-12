@@ -6,8 +6,12 @@ var fs = require('fs');
 var router = express.Router();
 
 router.get('/', function(req, res, next) {
+  res.render('index',{title : 'imgzip'})
+});
+
+router.post('/', function(req, res, next) {
   var options = {
-    uri: 'https://www.bing.com/images/search?q=curry&FORM=HDRSC2',
+    uri: 'https://www.bing.com/images/search?q='+req.body.word+'&FORM=HDRSC2',
     headers: {
         "User-Agent" : "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36"
     },
@@ -27,7 +31,7 @@ router.get('/', function(req, res, next) {
         console.log(imgs.length);
         console.log(imgs);
 
-        res.render('index', { img: imgs });
+        res.render('index', { title: 'imgzip', img: imgs });
       });
 });
 

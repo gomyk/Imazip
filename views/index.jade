@@ -2,11 +2,13 @@ extends layout
 
 block content
   h1= title
-  p Welcome to #{title}
-  
-  input#url(type='text', name='url', value='Search')
-  button#search 검색
+  div.form-group
+  form(action='/',method='post')
+    input#word(type='text', name='word', value='Search')
+    button.button(type='submit', name='search') 검색
+    p
+    
   -for(var prop in img)
-      tr
-        th(scope='row')
+    .col-xs-6.col-md-3
+      a.thumbnail(href=img[prop])
         img(src='#{img[prop]}')
