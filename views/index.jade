@@ -3,12 +3,7 @@ extends layout
 block content
   h1= title
   div.form-group
-  form(action='/',method='post')
+  form(action='/displayImage',method='post')
     input#word(type='text', name='word', value='Search')
     button.button(type='submit', name='search') 검색
     p
-    
-  -for(var prop in img)
-    .col-xs-6.col-md-3
-      a.thumbnail(href=img[prop])
-        img(src='#{img[prop]}')

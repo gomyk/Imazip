@@ -1,0 +1,14 @@
+extends layout
+
+block content
+  a.navbar-link(href='/') 검색창으로
+  div.form-group
+    form(action='/displayImage',method='post')
+      button.button(type='submit', name='search') 다운로드
+      p
+  -for(var prop in img)
+    .col-xs-6.col-md-3
+      div.checkbox_image
+        a.thumbnail(href=img[prop])
+          input#a(type='checkbox')
+          img(src='#{img[prop]}')
