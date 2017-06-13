@@ -19,11 +19,14 @@ router.post('/', function(req, res, next) {
         var $ = cheerio.load(body);
 
         var imgs = [];
-
         $("img").each(function(itme,index,array) {
           if($(this).attr("src") !== undefined) {
             if($(this).attr("src").indexOf("http") !== -1)
             imgs.push($(this).attr("src"));
+          }
+          else if($(this).attr("data-src") !== undefined) {
+            if($(this).attr("data-src").indexOf("http") !== -1)
+            imgs.push($(this).attr("data-src"));
           }
         });
         console.log(imgs.length);

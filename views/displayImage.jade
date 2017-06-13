@@ -1,15 +1,33 @@
-extends layout
+doctype html
+//
+  Dimension by HTML5 UP
+  html5up.net | @ajlkn
+  Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+html
+  head
+    title Imgzip
+    meta(charset='utf-8')
+    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css')
+    //if lte IE 9
+      link(rel='stylesheet', href='assets/css/ie9.css')
+    noscript
+      link(rel='stylesheet', href='assets/css/noscript.css')
+  body
+  header#header
+    .logo
+      span.icon.fa-diamond
+    .content
+      .inner
+        h1 Imazip
+        p
+          | 원하는 이미지를 검색하고 선택해서 다운로드 받을 수 있는 IMGZIP                 
 
-block content
-  a.navbar-link(href='/') 검색창으로
-  div.form-group
-  
-  form(action='/downloadImage',method='post')
-    -for(var prop in img)
-      .col-xs-6.col-md-3
-        div.checkbox_image
-          a.thumbnail(href=img[prop])
-            input#a(type='checkbox', name='checked_Image', value='#{img[prop]}')
-            img(src='#{img[prop]}')
-    button.button(type='submit', name='search') 다운로드
-    p
+      // Header
+    form(action='/downloadImage',method='post')
+      -for(var prop in img)
+        .col-xs-6.col-md-3
+          div.checkbox_image
+            a.thumbnail(href=img[prop])
+              input#a(type='checkbox', name='checked_Image', value='#{img[prop]}')
+              img(src='#{img[prop]}')
+      button.button(type='submit', name='search') 다운로드

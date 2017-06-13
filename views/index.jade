@@ -1,9 +1,47 @@
-extends layout
-
-block content
-  h1= title
-  div.form-group
-  form(action='/displayImage',method='post')
-    input#word(type='text', name='word', value='Search')
-    button.button(type='submit', name='search') 검색
-    p
+doctype html
+//
+  Dimension by HTML5 UP
+  html5up.net | @ajlkn
+  Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+html
+  head
+    title Imgzip
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1, user-scalable=no')
+    link(rel='stylesheet', href='assets/css/main.css')
+    //if lte IE 9
+      link(rel='stylesheet', href='assets/css/ie9.css')
+    noscript
+      link(rel='stylesheet', href='assets/css/noscript.css')
+      link(rel='stylesheet', href='/stylesheets/style.css')
+      link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css')
+  body
+    // Wrapper
+    #wrapper
+      // Header
+      header#header
+        .logo
+          span.icon.fa-diamond
+        .content
+          .inner
+            h1 Imazip
+            p
+              | 원하는 이미지를 검색하고 선택해서 다운로드 받을 수 있는 IMGZIP
+            div.form-group
+              form(action='/displayImage',method='post')
+                input#word(type='text', name='word', value='Search')
+                p 
+                button(type='submit', name='search') 검색
+      // Footer
+      footer#footer
+        p.copyright
+          | © Untitled. Design: 
+          a(href='https://html5up.net') HTML5 UP
+          | .
+    // BG
+    #bg
+    // Scripts
+    script(src='assets/js/jquery.min.js')
+    script(src='assets/js/skel.min.js')
+    script(src='assets/js/util.js')
+    script(src='assets/js/main.js')

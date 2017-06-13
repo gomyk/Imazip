@@ -16,13 +16,12 @@ router.post('/', function(req, res, next) {
       url : temp[i],
       dest : '/Users/hiasi/Desktop/Download_image/image/image'+i+'.jpg'
     }
-    console.log(i);
     download.image(options).then(({i,image}) => {
       console.log('File saved to', 'image'+i+'.jpg');
     }).catch((err) => {
       throw err
-    })
 
+    })
   }
   zipFolder('/Users/hiasi/Desktop/Download_image/image','/Users/hiasi/Desktop/Download_image/image.zip', function(err) {
     if(err) {
@@ -32,7 +31,9 @@ router.post('/', function(req, res, next) {
         console.log('sucess');
     }
   });
-  res.render('downloadImage', { title: 'imgzip'});
+
+
+  res.render('index', { title: 'imgzip'});
 });
 
 module.exports = router;
