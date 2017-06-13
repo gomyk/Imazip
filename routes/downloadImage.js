@@ -4,6 +4,7 @@ var cheerio = require('cheerio');
 var http = require('http');
 var fs = require('fs');
 var download = require('image-downloader');
+var zipFolder = require('zip-folder');
 var router = express.Router();
 
 router.post('/', function(req, res, next) {
@@ -23,6 +24,14 @@ router.post('/', function(req, res, next) {
     })
 
   }
+  zipFolder('/Users/hiasi/Desktop/Download_image/image','/Users/hiasi/Desktop/Download_image/image.zip', function(err) {
+    if(err) {
+      console.log('fail');
+    }
+    else {
+        console.log('sucess');
+    }
+  });
   res.render('downloadImage', { title: 'imgzip'});
 });
 
