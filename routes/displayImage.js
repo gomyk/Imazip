@@ -3,6 +3,7 @@ var request = require('request');
 var cheerio = require('cheerio');
 var http = require('http');
 var fs = require('fs');
+var download = require('image-downloader');
 var router = express.Router();
 
 router.post('/', function(req, res, next) {
@@ -13,6 +14,7 @@ router.post('/', function(req, res, next) {
     },
     encoding: 'binary'
   };
+
   request(options, function (err, response, body) {
         var $ = cheerio.load(body);
 
