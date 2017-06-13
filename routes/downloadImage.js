@@ -13,7 +13,7 @@ router.post('/', function(req, res, next) {
   for(var i in temp) {
     var options = {
       url : temp[i],
-      dest : '/Users/KHUNET/Desktop/OpenS/Imazip/image/image'+i+'.jpg'
+      dest : '/Users/hiasi/Desktop/Download_image/image/image'+i+'.jpg'
     }
     console.log(i);
     download.image(options).then(({i,image}) => {
