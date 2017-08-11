@@ -1,31 +1,21 @@
-Dimension by HTML5 UP
-html5up.net | @ajlkn
-Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+#IMAZIP Description
 
+##Motive
 
-This is Dimension, a fun little one-pager with modal-ized (is that a word?) "pages"
-and a cool depth effect (click on a menu item to see what I mean). Simple, fully
-responsive, and kitted out with all the usual pre-styled elements you'd expect.
-Hope you dig it :)
+> This project is web application coded by node.js. Purpose of making this site is when we wants to downloading Image within the web site, we have to download each image one by one. But it can be a very tiresome work. So this web site can download Images that you want to as one zip file, in a one time. 
 
-Demo images* courtesy of Unsplash, a radtastic collection of CC0 (public domain) images
-you can use for pretty much whatever.
+##How to use
 
-(* = not included)
+>First typing the words that you want to search as a image and click the search button.
 
-AJ
-aj@lkn.io | @ajlkn
+>Then you can see the searching result Images with check box that I crwal from the 'bing' site. 
+>Choose the Images that you wants to download by checking the box that next to Image.
 
+>After choosing the Images, click the download button.
+>Then the zip file will download to your desktop, default Download folder.
 
-Credits:
+##Simple Explanation
 
-	Demo Images:
-		Unsplash (unsplash.com)
-
-	Icons:
-		Font Awesome (fortawesome.github.com/Font-Awesome)
-
-	Other:
-		jQuery (jquery.com)
-		Misc. Sass functions (@HugoGiraudel)
-		Skel (skel.io)
+>When client sent the words that wants to seacrh, Server will be crwaling the Image URL that client wants on 'bing' site.
+>Then spread the Images on web site with checkbox.
+>after click the download button, download Images on server's memory As a zip file and send it to client.
